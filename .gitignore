@@ -1,0 +1,10 @@
+# Allow-list: only the published site and repo plumbing are tracked.
+# Everything else here (PANW reference PDF library, lambda_resources/, the
+# confidential AI Factory blueprint) is local-only reference material.
+/*
+!/site/
+!/.github/
+!/.gitignore
+!/CLAUDE.md
+!/README.md
+.DS_Store

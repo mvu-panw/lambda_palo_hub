@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palo Alto Networks Resource Hub for Lambda</title>
+  <meta name="description" content="Palo Alto Networks datasheets, Prisma AIRS guides, and reference architectures for the Lambda team." />
+  <link rel="icon" type="image/png" href="assets/images/PAN-Color.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=1" />
+</head>
+<body>
+  <nav>
+    <img src="assets/images/PAN-Color.png" alt="Palo Alto Networks" class="logo" />
+    <a class="site-title" href="index.html">Lambda Resource Hub</a>
+    <div class="nav-links">
+      <a href="firewalls.html">Next-Gen Firewalls</a>
+      <a href="ai-security.html">AI Security</a>
+      <a href="resources.html">Resource Library</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Palo Alto Networks for Lambda</h1>
+      <p>Datasheets, product guides, and reference architectures, collected for the Lambda team in one place. Download anything here directly. No sign-up required.</p>
+    </div>
+
+    <p class="section-label">Quick downloads</p>
+    <div class="dl-grid">
+      <a class="dl-card featured" href="assets/docs/datasheets/pa-5500-series.pdf" download>
+        <span class="dl-kicker">Datasheet &middot; Data center</span>
+        <span class="dl-title">PA-5500 Series</span>
+        <span class="dl-stat">Up to <strong>300 Gbps</strong> <span>threat prevention</span></span>
+        <span class="dl-desc">Quantum-optimized NGFW with 100G/400G QSFP-DD ports.</span>
+        <span class="dl-action">PDF &middot; 1.6 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/datasheets/pa-5400-series.pdf" download>
+        <span class="dl-kicker">Datasheet &middot; Data center</span>
+        <span class="dl-title">PA-5400 Series</span>
+        <span class="dl-stat">Up to <strong>76 Gbps</strong> <span>threat prevention</span></span>
+        <span class="dl-desc">High-throughput NGFW with native web proxy and 100G uplinks.</span>
+        <span class="dl-action">PDF &middot; 1.5 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/datasheets/pa-3400-series.pdf" download>
+        <span class="dl-kicker">Datasheet &middot; Mid-range</span>
+        <span class="dl-title">PA-3400 Series</span>
+        <span class="dl-stat">Up to <strong>20 Gbps</strong> <span>threat prevention</span></span>
+        <span class="dl-desc">1U NGFW with native web proxy and 100G options.</span>
+        <span class="dl-action">PDF &middot; 0.4 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/datasheets/pa-1400-series.pdf" download>
+        <span class="dl-kicker">Datasheet &middot; Branch</span>
+        <span class="dl-title">PA-1400 Series</span>
+        <span class="dl-stat">Up to <strong>6.2 Gbps</strong> <span>threat prevention</span></span>
+        <span class="dl-desc">1U NGFW with PoE and zero-touch provisioning.</span>
+        <span class="dl-action">PDF &middot; 0.6 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/datasheets/prisma-airs-ai-runtime-security.pdf" download>
+        <span class="dl-kicker">Datasheet &middot; AI security</span>
+        <span class="dl-title">Prisma AIRS AI Runtime Security</span>
+        <span class="dl-stat"><strong>Network + API</strong> <span>intercept</span></span>
+        <span class="dl-desc">Discover, protect, and monitor AI apps, models, agents, and data.</span>
+        <span class="dl-action">PDF &middot; 0.4 MB <strong>Download &darr;</strong></span>
+      </a>
+    </div>
+
+    <p class="section-label">Explore</p>
+    <div class="menu-grid" style="margin-bottom:40px;">
+      <a href="firewalls.html" class="menu-card">
+        <div class="card-icon" style="background:none;width:72px;height:72px;">
+          <img src="assets/images/Strata-Hybrid-dark.png" alt="" style="width:100%;height:100%;object-fit:contain;" />
+        </div>
+        <span class="card-label">Next-Gen Firewalls</span>
+        <span class="card-sub">Compare PA-5500, 5400, 3400 &amp; 1400 specs</span>
+      </a>
+
+      <a href="ai-security.html" class="menu-card">
+        <div class="card-icon" style="background:none;width:72px;height:72px;">
+          <img src="assets/images/Prisma-AIRS-Hybrid-dark.svg" alt="" style="width:100%;height:100%;object-fit:contain;" />
+        </div>
+        <span class="card-label">AI Security</span>
+        <span class="card-sub">Prisma AIRS guides &amp; GenAI architectures</span>
+      </a>
+
+      <a href="resources.html" class="menu-card">
+        <div class="card-icon" style="background:none;width:72px;height:72px;">
+          <img src="assets/images/Cortex-XSIAM-Hybrid.png" alt="" style="width:100%;height:100%;object-fit:contain;" />
+        </div>
+        <span class="card-label">Resource Library</span>
+        <span class="card-sub">More datasheets &amp; online documentation</span>
+      </a>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h2>Network security for AI infrastructure</h2>
+        <div class="prose">
+          <p>Every Palo Alto Networks next-generation firewall runs <strong>PAN-OS</strong>, so policy, threat prevention, and management work the same way from a branch PA-1400 up to a PA-5500 in the data center.</p>
+          <ul>
+            <li><strong>Single-pass architecture:</strong> performance stays predictable with security services turned on.</li>
+            <li><strong>Post-quantum ready:</strong> PQC decryption and site-to-site VPN using NIST ML-KEM, ML-DSA, and SLH-DSA.</li>
+            <li><strong>One console:</strong> manage everything from Strata Cloud Manager or Panorama.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Security for the AI you build and run</h2>
+        <div class="prose">
+          <p><strong>Prisma AIRS</strong> protects AI applications, models, agents, and data across their lifecycle:</p>
+          <ul>
+            <li><strong>AI Runtime Security:</strong> blocks prompt injection, data leakage, and malicious URLs at runtime.</li>
+            <li><strong>AI Model Security:</strong> scans models for threats before you deploy them.</li>
+            <li><strong>AI Red Teaming:</strong> runs automated adversarial testing against your AI apps and agents.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Prepared by Palo Alto Networks for the Lambda team. Product content &copy; Palo Alto Networks, Inc. Specifications are from published datasheets; contact your Palo Alto Networks account team to confirm sizing.
+  </footer>
+</body>
+</html>

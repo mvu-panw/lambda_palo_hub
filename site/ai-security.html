@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Security | Lambda Resource Hub</title>
+  <meta name="description" content="Prisma AIRS datasheet, product guides, and GenAI security reference architectures." />
+  <link rel="icon" type="image/png" href="assets/images/PAN-Color.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=1" />
+</head>
+<body>
+  <nav>
+    <img src="assets/images/PAN-Color.png" alt="Palo Alto Networks" class="logo" />
+    <a class="site-title" href="index.html">Lambda Resource Hub</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="firewalls.html">Next-Gen Firewalls</a>
+      <a href="resources.html">Resource Library</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>AI Security with Prisma AIRS</h1>
+      <p>Prisma AIRS secures AI applications, models, agents, and data from build through runtime. Start with the datasheet, then go deeper with the product guides and reference architectures.</p>
+    </div>
+
+    <p class="section-label">Start here</p>
+    <div class="dl-grid">
+      <a class="dl-card featured" href="assets/docs/datasheets/prisma-airs-ai-runtime-security.pdf" download>
+        <span class="dl-kicker">Datasheet</span>
+        <span class="dl-title">Prisma AIRS AI Runtime Security</span>
+        <span class="dl-desc">Covers both deployment modes, network intercept and API intercept, plus model, data, and application protection.</span>
+        <span class="dl-action">PDF &middot; 6 pages &middot; 0.4 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/genai/securing-ai-access-and-applications-overview.pdf" download>
+        <span class="dl-kicker">Architecture overview</span>
+        <span class="dl-title">Securing AI Access and Applications</span>
+        <span class="dl-desc">An overview of AI application risks, the relevant cybersecurity frameworks, and where each control fits.</span>
+        <span class="dl-action">PDF &middot; 31 pages &middot; 4.6 MB <strong>Download &darr;</strong></span>
+      </a>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h2>What AI Runtime Security does</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>Discover:</strong> automatically maps AI applications, models, users, datasets, and plugins, and how they connect.</li>
+            <li><strong>Model protection:</strong> blocks direct and indirect prompt injection, including goal hijacking and jailbreak attempts.</li>
+            <li><strong>Data protection:</strong> detects 1,000+ predefined data patterns in prompts and responses to prevent leakage.</li>
+            <li><strong>Application protection:</strong> blocks malicious URLs in model input and output, including URLs that poisoned RAG data could produce.</li>
+            <li><strong>Agent and database controls:</strong> secures AI agents and limits which query types (create, read, update, delete) AI-generated database calls can run.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Two ways to deploy</h2>
+        <div class="prose">
+          <p><strong>Network intercept:</strong> inline inspection of traffic between apps, models, and the internet. It uses the same App-ID and cloud-delivered security services as the NGFW, and adds east-west inspection for containerized and virtualized workloads.</p>
+          <p><strong>API intercept:</strong> developers call the AIRS API directly from their application code. This works with any public or private model, adds no decryption overhead, and can return custom responses when a threat is detected.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-label">Prisma AIRS product guides</p>
+    <p class="note">Full product guides from docs.paloaltonetworks.com, as PDFs. The administration guide is large (33 MB).</p>
+    <div class="dl-grid">
+      <a class="dl-card" href="assets/docs/airs/ai-runtime-security-administration.pdf" download>
+        <span class="dl-kicker">AI Runtime Security</span>
+        <span class="dl-title">Administration Guide</span>
+        <span class="dl-desc">Covers cloud and AI agent discovery, risk analysis, deployment types, and protecting agents with API intercept.</span>
+        <span class="dl-action">PDF &middot; 416 pages &middot; 33 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/airs/ai-runtime-security-activation-and-onboarding.pdf" download>
+        <span class="dl-kicker">AI Runtime Security</span>
+        <span class="dl-title">Activation &amp; Onboarding</span>
+        <span class="dl-desc">Covers licensing, tenant activation, and onboarding cloud accounts and apps.</span>
+        <span class="dl-action">PDF &middot; 120 pages &middot; 7 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/airs/ai-model-security.pdf" download>
+        <span class="dl-kicker">AI Model Security</span>
+        <span class="dl-title">AI Model Security Guide</span>
+        <span class="dl-desc">Runs automated security assessments on internal and third-party models before they reach production.</span>
+        <span class="dl-action">PDF &middot; 64 pages &middot; 4.7 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/airs/ai-red-teaming.pdf" download>
+        <span class="dl-kicker">AI Red Teaming</span>
+        <span class="dl-title">AI Red Teaming Guide</span>
+        <span class="dl-desc">Runs adversarial testing of AI apps and agents, with 50+ attack techniques across 500+ scenarios.</span>
+        <span class="dl-action">PDF &middot; 124 pages &middot; 7.4 MB <strong>Download &darr;</strong></span>
+      </a>
+    </div>
+
+    <p class="section-label">GenAI reference architectures</p>
+    <p class="note">Each design guide explains the architecture and why it is built that way. Each matching deployment guide gives the step-by-step configuration.</p>
+    <div class="dl-grid">
+      <a class="dl-card" href="assets/docs/genai/securing-access-to-genai-apps-solution-guide.pdf" download>
+        <span class="dl-kicker">Solution guide</span>
+        <span class="dl-title">Securing Access to GenAI Applications</span>
+        <span class="dl-desc">Covers Prisma Access and NGFW policy for safely enabling AI apps for all users, at every location.</span>
+        <span class="dl-action">PDF &middot; 66 pages &middot; 4 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/genai/genai-aws-design-guide.pdf" download>
+        <span class="dl-kicker">AWS &middot; Design</span>
+        <span class="dl-title">Securing GenAI Applications in AWS</span>
+        <span class="dl-desc">Covers the architecture for protecting GenAI apps and models on AWS.</span>
+        <span class="dl-action">PDF &middot; 56 pages &middot; 5.5 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/genai/genai-aws-deployment-guide.pdf" download>
+        <span class="dl-kicker">AWS &middot; Deployment</span>
+        <span class="dl-title">Securing GenAI Applications in AWS</span>
+        <span class="dl-desc">Gives the step-by-step deployment of the AWS design.</span>
+        <span class="dl-action">PDF &middot; 83 pages &middot; 3.8 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/genai/genai-azure-design-guide.pdf" download>
+        <span class="dl-kicker">Azure &middot; Design</span>
+        <span class="dl-title">Securing GenAI Applications in Azure</span>
+        <span class="dl-desc">Covers the architecture for protecting GenAI apps and models on Azure.</span>
+        <span class="dl-action">PDF &middot; 51 pages &middot; 5.1 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/genai/genai-azure-deployment-guide.pdf" download>
+        <span class="dl-kicker">Azure &middot; Deployment</span>
+        <span class="dl-title">Securing GenAI Applications in Azure</span>
+        <span class="dl-desc">Gives the step-by-step deployment of the Azure design.</span>
+        <span class="dl-action">PDF &middot; 63 pages &middot; 3.1 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/genai/genai-gcp-design-guide.pdf" download>
+        <span class="dl-kicker">Google Cloud &middot; Design</span>
+        <span class="dl-title">Securing GenAI Applications in Google Cloud</span>
+        <span class="dl-desc">Covers the architecture for protecting GenAI apps and models on Google Cloud.</span>
+        <span class="dl-action">PDF &middot; 50 pages &middot; 4.8 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card" href="assets/docs/genai/genai-gcp-deployment-guide.pdf" download>
+        <span class="dl-kicker">Google Cloud &middot; Deployment</span>
+        <span class="dl-title">Securing GenAI Applications in Google Cloud</span>
+        <span class="dl-desc">Gives the step-by-step deployment of the Google Cloud design.</span>
+        <span class="dl-action">PDF &middot; 64 pages &middot; 3.5 MB <strong>Download &darr;</strong></span>
+      </a>
+    </div>
+
+    <p class="section-label">Online</p>
+    <div class="dl-grid">
+      <a class="dl-card" href="https://www.paloaltonetworks.com/ai-security/prisma-airs" target="_blank" rel="noopener">
+        <span class="dl-kicker">Product page</span>
+        <span class="dl-title">Prisma AIRS overview</span>
+        <span class="dl-desc">Product overview, demos, and customer stories.</span>
+        <span class="dl-action">paloaltonetworks.com <strong>Open &nearr;</strong></span>
+      </a>
+      <a class="dl-card" href="https://docs.paloaltonetworks.com/prisma-airs" target="_blank" rel="noopener">
+        <span class="dl-kicker">Documentation</span>
+        <span class="dl-title">Prisma AIRS docs</span>
+        <span class="dl-desc">The latest online versions of every guide above, plus API references.</span>
+        <span class="dl-action">docs.paloaltonetworks.com <strong>Open &nearr;</strong></span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    Prepared by Palo Alto Networks for the Lambda team. Product content &copy; Palo Alto Networks, Inc. Specifications are from published datasheets; contact your Palo Alto Networks account team to confirm sizing.
+  </footer>
+</body>
+</html>

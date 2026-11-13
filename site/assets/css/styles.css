@@ -505,3 +505,8 @@ code { font-size: 0.85em; }
   .two-col { grid-template-columns: 1fr; }
   .series-head .btn { width: 100%; text-align: center; }
 }
+
+/* PDF embeds (topology page). PNG shows first; PDF.js swaps in a canvas render of the PDF. */
+.pdf-embed { display: block; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; transition: border-color 0.2s; }
+.pdf-embed:hover { border-color: var(--cyan); }
+.pdf-embed img, .pdf-embed canvas { display: block; width: 100%; height: auto; }

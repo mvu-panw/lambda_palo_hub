@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lambda Topology | Lambda Resource Hub</title>
+  <meta name="description" content="Lambda Private Cloud and 1-Click Clusters network topology diagrams." />
+  <link rel="icon" type="image/png" href="assets/images/PAN-Color.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=3" />
+</head>
+<body>
+  <nav>
+    <img src="assets/images/PAN-Color.png" alt="Palo Alto Networks" class="logo" />
+    <a class="site-title" href="index.html">Lambda Resource Hub</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="firewalls.html">Next-Gen Firewalls</a>
+      <a href="ai-security.html">AI Security</a>
+      <a href="resources.html">Resource Library</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Lambda Topology</h1>
+      <p>Reference topologies for Lambda Private Cloud and 1-Click Clusters, showing where perimeter, management, and out-of-band firewalls sit relative to the compute, storage, and InfiniBand fabrics.</p>
+    </div>
+
+    <div class="pill-row">
+      <a href="#private-cloud">Private Cloud</a>
+      <a href="#one-click">1-Click Clusters</a>
+    </div>
+
+    <section class="series card" id="private-cloud">
+      <div class="series-head">
+        <h2>Lambda Private Cloud</h2>
+        <a class="btn btn-primary" href="assets/docs/topology/lambda-private-cloud-topology.pdf" download>Download PDF &darr;</a>
+      </div>
+      <a class="pdf-embed" href="assets/docs/topology/lambda-private-cloud-topology.pdf" target="_blank" rel="noopener" data-pdf="assets/docs/topology/lambda-private-cloud-topology.pdf" aria-label="Lambda Private Cloud topology diagram (opens full PDF)">
+        <img src="assets/docs/topology/lambda-private-cloud-topology.png" alt="Lambda Private Cloud topology: dual DIA links into HA perimeter firewalls, in-band Ethernet, InfiniBand fabric, and a management network with management and out-of-band firewalls." />
+      </a>
+      <p class="note">Click the diagram to open the full PDF and zoom in.</p>
+      <div class="prose" style="margin-top:16px;">
+        <ul>
+          <li><strong>Perimeter:</strong> two dedicated internet access (DIA) links terminate on an HA pair of perimeter firewalls, which feed the in-band Ethernet network.</li>
+          <li><strong>Fabrics:</strong> the Ethernet switches connect compute, head nodes, and the storage cluster. A separate InfiniBand fabric links the GPU nodes.</li>
+          <li><strong>Management:</strong> a management firewall fronts the management switches (BMC and infrastructure management). An out-of-band firewall on cellular backup provides a separate path in.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="series card" id="one-click">
+      <div class="series-head">
+        <h2>Lambda 1-Click Clusters</h2>
+        <a class="btn btn-primary" href="assets/docs/topology/lambda-1-click-clusters.pdf" download>Download PDF &darr;</a>
+      </div>
+      <a class="pdf-embed" href="assets/docs/topology/lambda-1-click-clusters.pdf" target="_blank" rel="noopener" data-pdf="assets/docs/topology/lambda-1-click-clusters.pdf" aria-label="Lambda 1-Click Clusters topology diagram (opens full PDF)">
+        <img src="assets/docs/topology/lambda-1-click-clusters.png" alt="Lambda 1-Click Clusters topology: dual DIA links into HA perimeter firewalls, then a customer tenancy with internet and NAT gateways, head and GPU nodes, persistent storage, and InfiniBand." />
+      </a>
+      <p class="note">Click the diagram to open the full PDF and zoom in.</p>
+      <div class="prose" style="margin-top:16px;">
+        <ul>
+          <li><strong>Perimeter:</strong> two DIA links terminate on an HA pair of perimeter firewalls in front of the customer tenancies.</li>
+          <li><strong>Customer tenancy:</strong> an internet gateway and a NAT gateway serve a subnet that holds the management (head) nodes and compute (GPU) nodes, with persistent file storage attached.</li>
+          <li><strong>Fabric:</strong> the GPU nodes connect over InfiniBand.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Prepared by Palo Alto Networks for the Lambda team. Product content &copy; Palo Alto Networks, Inc. Specifications are from published datasheets; contact your Palo Alto Networks account team to confirm sizing.
+  </footer>
+
+  <!-- Render each PDF with PDF.js; the PNG stays as the fallback if this fails. -->
+  <script src="assets/vendor/pdfjs-3.11.174/pdf.min.js"></script>
+  <script>
+    (function () {
+      if (!window.pdfjsLib) return;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/vendor/pdfjs-3.11.174/pdf.worker.min.js';
+      function render(el) {
+        pdfjsLib.getDocument(el.dataset.pdf).promise
+          .then(function (doc) { return doc.getPage(1); })
+          .then(function (page) {
+            var cssWidth = el.clientWidth;
+            var base = page.getViewport({ scale: 1 });
+            var scale = (cssWidth / base.width) * Math.min(window.devicePixelRatio || 1, 3);
+            var vp = page.getViewport({ scale: scale });
+            var canvas = document.createElement('canvas');
+            canvas.width = vp.width; canvas.height = vp.height;
+            canvas.setAttribute('role', 'img');
+            canvas.setAttribute('aria-label', el.querySelector('img').alt);
+            return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise
+              .then(function () { el.replaceChildren(canvas); });
+          })
+          .catch(function () { /* keep PNG fallback */ });
+      }
+      document.querySelectorAll('.pdf-embed[data-pdf]').forEach(render);
+    })();
+  </script>
+</body>
+</html>

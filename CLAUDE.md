@@ -23,9 +23,23 @@ There is no build, lint, or test. To check links, extract every `href`/`src` fro
 
 ## Site conventions
 
-- Five pages: `index` (quick downloads for the 4 featured datasheets plus the AIRS datasheet), `firewalls` (spec comparison table and per-series cards), `ai-security` (AIRS datasheet, the 4 AIRS product guides, 8 GenAI reference architectures), `resources` (other datasheets, including the single-pass architecture brief, and links to online docs), and `topology` (the Lambda Private Cloud and 1-Click Clusters diagrams, embedded).
-- **No templating:** the nav and footer are copied into every page. Each page's `.nav-links` lists the *other* pages, with Home on every page except `index.html`. When nav changes, edit all five files.
-- `site/assets/css/styles.css` is lines 1–445 of `~/lambda/site/assets/css/styles.css` (the ai_sec_by_design template), unchanged, plus a block at the end marked "Lambda resource hub additions" (`.dl-grid`/`.dl-card` download cards, `.featured` gradient border, `.series`, `.pill-row`). The stylesheet is linked as `styles.css?v=3`; bump the version on every page together after editing the CSS.
+- Nine pages, one per platform plus hub pages:
+
+  | Page | Holds |
+  |---|---|
+  | `index` | Quick downloads (PA-5500/5400/3400/1400 + AIRS datasheet), Explore grid linking every page |
+  | `firewalls` | Spec comparison table, per-series cards |
+  | `ai-security` | AIRS datasheet, 4 AIRS product guides, 8 GenAI reference architectures |
+  | `soc` | Cortex XSIAM and Cortex Agentic Endpoint Security (datasheet + at-a-glance for each) |
+  | `identity` | Idira PAM, Endpoint Privilege Manager, IGA |
+  | `cloud-management` | Strata Cloud Manager, Next-Generation Trust Security, certificate-outage brief (both trust PDFs say they extend SCM) |
+  | `unit42` | Unit 42 Threat Intel Services |
+  | `topology` | Embedded Lambda diagrams |
+  | `resources` | Remaining firewall briefs (single-pass, clustering, Precision AI bundle, PA-400R), a "Datasheets by platform" index with hand-written download counts, online docs |
+
+  When a new PDF lands in `Datasheets/`, put it on the platform page it belongs to (and only there), and update the download count on the matching `resources.html` card. Each platform page follows the same pattern: featured `.dl-card` downloads, then summary cards written *only* from the datasheet text, then "Online" links. Check every number against the PDF.
+- **No templating:** the nav and footer are copied into every page. The nav lists every page except the current one, with Home first. Regenerate it on all nine pages at once (a short Python loop over a `(file, label)` list that replaces the `<div class="nav-links">` block) rather than editing by hand. Nav wraps to its own row under 1240px.
+- `site/assets/css/styles.css` is lines 1–445 of `~/lambda/site/assets/css/styles.css` (the ai_sec_by_design template), unchanged, plus a block at the end marked "Lambda resource hub additions" (`.dl-grid`/`.dl-card` download cards, `.featured` gradient border, `.series`, `.pill-row`). The stylesheet is linked as `styles.css?v=5`; bump the version on every page together after editing the CSS.
 - **Topology embeds:** each `.pdf-embed` is a link to the PDF that contains a PNG render (`site/assets/docs/topology/*.png`). PDF.js (self-hosted in `site/assets/vendor/pdfjs-3.11.174/`) swaps in a canvas render of page 1. It must be same-origin: loaded from cdnjs, the cross-origin worker stalls and `getDocument` never resolves. After editing a diagram PDF, re-render the PNG with `pdftoppm -png -r 150 -singlefile in.pdf out` so the fallback matches. Headless Chrome screenshots are unreliable for confirming the canvas swap; use `--timeout=15000` and treat the PNG as an acceptable result.
 - Downloads are plain `<a href="assets/docs/..." download>` links. PDFs live in `site/assets/docs/{datasheets,airs,genai}/` under URL-safe renamed filenames; the originals stay in the library folders. Each card's page count and size (`PDF · N pages · X MB`) is written by hand, so update it when you swap a PDF (`pdfinfo` for pages, `du -h` for size).
 - Spec numbers and port lists on `firewalls.html` and the index cards come straight from the datasheet tables. Re-extract them with `pdftotext -layout`. Some table cells only show up with `grep -B3 -A3` because of line wrapping.

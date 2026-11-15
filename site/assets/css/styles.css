@@ -510,3 +510,13 @@ code { font-size: 0.85em; }
 .pdf-embed { display: block; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; transition: border-color 0.2s; }
 .pdf-embed:hover { border-color: var(--cyan); }
 .pdf-embed img, .pdf-embed canvas { display: block; width: 100%; height: auto; }
+
+/* Nine-page nav: wrap links onto their own row before they squeeze the title. */
+@media (max-width: 1240px) {
+  nav { flex-wrap: wrap; }
+  nav .nav-links { margin-left: 0; width: 100%; flex-wrap: wrap; gap: 8px 20px; }
+}
+
+/* Keep "PDF · N pages · X MB" and "Download" each on one line; the link drops below when the card is narrow. */
+.dl-card .dl-action { white-space: nowrap; flex-wrap: wrap; column-gap: 12px; row-gap: 4px; }
+.dl-card .dl-action strong { margin-left: auto; }

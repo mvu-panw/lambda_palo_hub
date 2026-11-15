@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOC (Cortex) | Lambda Resource Hub</title>
+  <meta name="description" content="Cortex XSIAM and Cortex Agentic Endpoint Security datasheets and summaries." />
+  <link rel="icon" type="image/png" href="assets/images/PAN-Color.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
+</head>
+<body>
+  <nav>
+    <img src="assets/images/PAN-Color.png" alt="Palo Alto Networks" class="logo" />
+    <a class="site-title" href="index.html">Lambda Resource Hub</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="firewalls.html">Firewalls</a>
+      <a href="ai-security.html">AI Security</a>
+      <a href="identity.html">Identity</a>
+      <a href="cloud-management.html">Cloud Management</a>
+      <a href="unit42.html">Unit 42</a>
+      <a href="topology.html">Lambda Topology</a>
+      <a href="resources.html">Library</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Security Operations with Cortex</h1>
+      <p>Cortex brings SOC data, detection, automation, and response together on one AI-driven platform. It also covers the AI agents, extensions, and packages your engineers install on their laptops.</p>
+    </div>
+
+    <p class="section-label">Quick downloads</p>
+    <div class="dl-grid">
+      <a class="dl-card featured" href="assets/docs/datasheets/cortex-xsiam.pdf" download>
+        <span class="dl-kicker">Datasheet</span>
+        <span class="dl-title">Cortex XSIAM</span>
+        <span class="dl-desc">The full platform datasheet: architecture, data lake, detection, automation, and agentic AI.</span>
+        <span class="dl-action">PDF &middot; 7 pages &middot; 0.9 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/datasheets/cortex-xsiam-aag.pdf" download>
+        <span class="dl-kicker">At a glance</span>
+        <span class="dl-title">Cortex XSIAM</span>
+        <span class="dl-desc">One page showing every SOC capability XSIAM brings together.</span>
+        <span class="dl-action">PDF &middot; 1 page &middot; 0.1 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/datasheets/cortex-agentic-endpoint-security.pdf" download>
+        <span class="dl-kicker">Solution brief</span>
+        <span class="dl-title">Cortex Agentic Endpoint Security</span>
+        <span class="dl-desc">Visibility and control over the AI agents, MCP servers, extensions, and packages on every endpoint.</span>
+        <span class="dl-action">PDF &middot; 7 pages &middot; 1.8 MB <strong>Download &darr;</strong></span>
+      </a>
+      <a class="dl-card featured" href="assets/docs/datasheets/cortex-agentic-endpoint-security-one-page.pdf" download>
+        <span class="dl-kicker">At a glance</span>
+        <span class="dl-title">Cortex Agentic Endpoint Security</span>
+        <span class="dl-desc">Use cases, key benefits, and licensing options on two pages.</span>
+        <span class="dl-action">PDF &middot; 2 pages &middot; 0.4 MB <strong>Download &darr;</strong></span>
+      </a>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h2>Cortex XSIAM</h2>
+        <div class="prose">
+          <p>An AI-driven security operations platform that replaces a stack of separate SOC tools with one data model, one console, and one automation engine. Palo Alto Networks runs its own SOC on it.</p>
+          <ul>
+            <li><strong>One platform:</strong> SIEM, SOAR, XDR, cloud detection and response (CDR), network detection and response (NDR), identity threat detection and response (ITDR), exposure management, email security, and threat intelligence.</li>
+            <li><strong>Data foundation:</strong> the Cortex Extended Data Lake (XDL) has 1,100+ integrations, and it correlates, normalizes, and enriches data as it arrives. Federated search also covers data stored outside XDL.</li>
+            <li><strong>Detection:</strong> 13,300+ detectors, including 2,900 machine learning models. Low-fidelity alerts are handled automatically, and the rest are grouped into prioritized cases.</li>
+            <li><strong>Automation:</strong> 1,300+ out-of-the-box playbooks, plus agentic playbooks that embed LLM tasks, with optional human approval. The datasheet cites up to 75% less manual SOC effort.</li>
+            <li><strong>Agentic Assistant:</strong> built on Cortex AgentiX, it gives analysts a fleet of AI agents that investigate and act while humans stay in control.</li>
+            <li><strong>Managed option:</strong> Unit 42 Managed XSIAM provides 24/7 coverage.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Cortex Agentic Endpoint Security</h2>
+        <div class="prose">
+          <p>An AI-native control plane for the software modern endpoints actually run: AI coding agents, browser and IDE extensions, MCP servers, models, and open-source packages. Traditional EDR doesn't see these.</p>
+          <ul>
+            <li><strong>Discover shadow AI:</strong> inventories AI agents and their runtime activity, MCP servers, models, browser extensions, and IDE plugins across the fleet.</li>
+            <li><strong>Govern AI agents:</strong> pre-execution hooks stop agents such as Cursor and Claude Code from reading local cloud secrets or running destructive commands.</li>
+            <li><strong>Stop supply-chain attacks:</strong> blocks malicious npm and PyPI packages before they reach developer machines.</li>
+            <li><strong>Context-aware risk:</strong> an AI risk engine scores every artifact on origin, vulnerabilities, and behavior. The scores are checked against NVD, Google OSV, and the OpenSSF Scorecard.</li>
+            <li><strong>No developer friction:</strong> a blocked install becomes a "Request Approval" button that opens a ticket in Jira or ServiceNow.</li>
+            <li><strong>Deployment:</strong> extends Cortex XDR natively, or runs alongside a third-party EDR/XDR without replacing it.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-label">Online</p>
+    <div class="dl-grid">
+      <a class="dl-card" href="https://www.paloaltonetworks.com/cortex/cortex-xsiam" target="_blank" rel="noopener">
+        <span class="dl-kicker">Product page</span>
+        <span class="dl-title">Cortex XSIAM</span>
+        <span class="dl-desc">Overview, demos, and customer stories.</span>
+        <span class="dl-action">paloaltonetworks.com <strong>Open &nearr;</strong></span>
+      </a>
+      <a class="dl-card" href="https://www.paloaltonetworks.com/cortex/agentic-endpoint-security" target="_blank" rel="noopener">
+        <span class="dl-kicker">Product page</span>
+        <span class="dl-title">Agentic Endpoint Security</span>
+        <span class="dl-desc">Overview of Cortex AES.</span>
+        <span class="dl-action">paloaltonetworks.com <strong>Open &nearr;</strong></span>
+      </a>
+      <a class="dl-card" href="https://docs-cortex.paloaltonetworks.com/" target="_blank" rel="noopener">
+        <span class="dl-kicker">Documentation</span>
+        <span class="dl-title">Cortex docs</span>
+        <span class="dl-desc">Admin guides and API references for every Cortex product.</span>
+        <span class="dl-action">docs-cortex.paloaltonetworks.com <strong>Open &nearr;</strong></span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    Prepared by Palo Alto Networks for the Lambda team. Product content &copy; Palo Alto Networks, Inc. Specifications are from published datasheets; contact your Palo Alto Networks account team to confirm sizing.
+  </footer>
+</body>
+</html>
